@@ -16,7 +16,8 @@ exports.up = function(knex, Promise) {
     table.string('title').notNullable();
     table.string('description').notNullable();
     table.integer('price').notNullable();
-    table.boolean('deadline').notNullable().defaultTo(false);
+    table.boolean('status').notNullable();
+    table.string('deadline').notNullable();
     table.integer('user_id').references('id').inTable('users');
   });
 };
