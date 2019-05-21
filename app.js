@@ -3,9 +3,14 @@ const app = express()
 const port = process.env.PORT || 3000
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
+const knex = require('./knexfile');
+const cors = require('cors');
+
+
 
 app.use(morgan('dev'))
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: false}))
 
 app.get('/ping', (req, res, next) => {
   res.json({message: `Pong!!`})
