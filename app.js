@@ -16,6 +16,13 @@ app.get('/ping', (req, res, next) => {
   res.json({message: `Pong!!`})
 })
 
+
+// routes
+
+
+
+
+//  boiler plate below
 app.use((err, req, res, next) => {
   const status = err.status || 500
   res.status(status).json({error: err})
