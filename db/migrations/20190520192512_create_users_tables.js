@@ -3,7 +3,9 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTable('users', function(table) {
     table.increments('id');
     table.string('name').notNullable();
-    table.string('email').notNullable();
+    table.string('organization').notNullable();
+    table.string('role').notNullable();
+    table.integer('reputation').notNullable();
     table.timestamp('created_at').defaultTo(knex.fn.now());
     table.timestamp('updated_at').defaultTo(knex.fn.now());
   })
@@ -12,7 +14,9 @@ exports.up = function(knex, Promise) {
     table.timestamp('created_at').defaultTo(knex.fn.now());
     table.timestamp('updated_at').defaultTo(knex.fn.now());
     table.string('title').notNullable();
-    table.boolean('completed').notNullable().defaultTo(false);
+    table.string('description').notNullable();
+    table.integer('price').notNullable();
+    table.boolean('deadline').notNullable().defaultTo(false);
     table.integer('user_id').references('id').inTable('users');
   });
 };
