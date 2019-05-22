@@ -6,21 +6,26 @@ const bodyParser = require('body-parser')
 const knex = require('./knexfile');
 const cors = require('cors');
 
-
-
+app.disable("x-powered-by")
 app.use(morgan('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 
-app.get('/ping', (req, res, next) => {
-  res.json({message: `Pong!!`})
-})
+
+// users MVC
+const usersRoutes = require('./api/routes/usersRoutes')
+app.use('/users', usersRoutes)
 
 
-// routes
 
 
 
+
+
+
+// app.get('/ping', (req, res, next) => {
+//   res.json({message: `Pong!!`})
+// })
 
 //  boiler plate below
 app.use((err, req, res, next) => {
