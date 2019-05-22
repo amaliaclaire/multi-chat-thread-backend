@@ -6,6 +6,7 @@ const bodyParser = require('body-parser')
 const knex = require('./knexfile');
 const cors = require('cors');
 
+app.use(cors())
 app.disable("x-powered-by")
 app.use(morgan('dev'))
 app.use(bodyParser.json())
@@ -13,8 +14,15 @@ app.use(bodyParser.urlencoded({extended: false}))
 
 
 // users MVC
+
 const usersRoutes = require('./api/routes/usersRoutes')
+const ticketRoutes = require('./api/routes/ticketsRoutes')
+
 app.use('/users', usersRoutes)
+app.use('/tickets', ticketRoutes)
+
+
+
 
 
 
