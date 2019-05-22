@@ -5,4 +5,5 @@ const ctrl = require('../controllers/ticketsControllers');
 router.get('/', ctrl.getTickets)
 
 
+
 module.exports = router
