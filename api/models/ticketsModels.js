@@ -8,7 +8,7 @@ getAllTickets = (body) => {
   .where(body)
   .then(result => result)
   .catch(err => console.log(err))
-
 }
+
 
 module.exports = { getAllTickets }
