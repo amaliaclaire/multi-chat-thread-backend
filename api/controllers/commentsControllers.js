@@ -6,7 +6,16 @@ getComments = (req, res, next) => {
     .catch(err => console.log(err))
   }
 
+  console.log('controllers were hit');
+
+
+  usersTicketComments = (req, res, next) => {
+    model.userTicketsComments(req.params.user)
+    .then(comments => res.json({comments}))
+    .catch(console.log(err))
+  }
 
 
 
-module.exports = {getComments}
+
+module.exports = {getComments, usersTicketComments}
