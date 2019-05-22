@@ -13,7 +13,7 @@ getAllComments = (body) => {
 
 userTicketsComments = (username) => {
   return knex("users")
-  .where({user: user})
+  .where({user_name: username})
   .first()
   .then(userInfo => {
     return knex('comments')
