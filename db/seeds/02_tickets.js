@@ -28,7 +28,33 @@ exports.seed = function(knex, Promise) {
           status: true,
           deadline: '1/7/2019',
           user_id: 3,
+        },
+        { id: 4,
+          title: 'test',
+          description: 'lorem ipsum stuff',
+          price: 100,
+          status: true,
+          deadline: '1/7/2019',
+          user_id: 4,
+        },
+        { id: 5,
+          title: 'test 2',
+          description: 'Sed tellus dui, pulvinar nec ipsum id, vestibulum mattis magna. Suspendisse sem tellus, faucibus vitae consequat eget, dictum vitae lectus.',
+          price: 100,
+          status: true,
+          deadline: '1/7/2019',
+          user_id: 4,
+        },
+        { id: 6,
+          title: 'test 3',
+          description: 'Aliquam tincidunt quam sed urna porta commodo',
+          price: 100,
+          status: true,
+          deadline: '1/7/2019',
+          user_id: 4,
         }
+
+
       ]);
     });
 };
