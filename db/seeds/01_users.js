@@ -5,31 +5,31 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex('users').insert([
         { id: 1,
-          name: 'Amalia',
+          user_name: 'Amalia',
           organization: 'galvanize',
           role: 'software engineer',
           reputation: 1
         },
         { id: 2,
-          name: 'Mossy',
+          user_name: 'Mossy',
           organization: 'galvanize',
           role: 'data science dog',
           reputation: 3
         },
         { id: 3,
-          name: 'Stewart',
+          user_name: 'Stewart',
           organization: 'galvanize',
           role: 'model',
           reputation: 3
         },
         { id: 4,
-          name: 'Deebee',
+          user_name: 'Deebee',
           organization: 'sparks household',
           role: 'catcher',
           reputation: 2
         },
         { id: 5,
-          name: 'Weebee',
+          user_name: 'Weebee',
           organization: 'sparks household',
           role: 'fat',
           reputation: 2
