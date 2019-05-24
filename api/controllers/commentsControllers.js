@@ -14,7 +14,16 @@ getComments = (req, res, next) => {
     .catch(console.log(err))
   }
 
+  create = (req, res, next) => {
+    const result = model.create(req.body)
+
+    if(result.errors) {
+      return next({status: 400, message: `could not create user`, errors: result.errors})
+    }
+  }
 
 
 
-module.exports = {getComments, usersTicketComments}
+
+
+module.exports = {getComments, usersTicketComments, create}

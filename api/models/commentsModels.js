@@ -21,6 +21,23 @@ userTicketsComments = (username) => {
 }
 
 
+create = (body) => {
+  const errors = []
+  const comment = body.comment
+  let response
+
+  if (!comment) {
+    errors.push('comment is required to proceed')
+    response = {error}
+  } else {
+    const newComment = {id: uuid(), comment}
+    comment.push(newComment)
+    response = newComment
+  }
+  return response 
+}
 
 
-module.exports = { getAllComments, userTicketsComments }
+
+
+module.exports = { getAllComments, userTicketsComments, create }

@@ -19,6 +19,7 @@ getOne = (id) => {
   .catch(err => console.log(err))
 }
 
-console.log('getone', getOne);
+
+
 
 module.exports = { getAll, getOne }
