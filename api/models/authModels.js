@@ -9,6 +9,10 @@ getAll = (body) => {
   .catch(err => console.log(err))
 }
 
+getOne = (id) => {
+  return id ? knex('users').where({id}).first() : knex('users')
+}
 
 
-module.exports = { getAll }
+
+module.exports = { getAll, getOne }

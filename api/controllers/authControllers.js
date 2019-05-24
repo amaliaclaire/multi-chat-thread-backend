@@ -7,7 +7,13 @@ getUsers = (req, res, next) => {
   .catch(err => console.log(err))
 }
 
+getUser = (req, res) => {
+  const id = req.params.id
+  model.populate(id).then()
+  .then(user => res.status(200).send(user))
+  .catch(console.log(err))
+}
 
 
 
-module.exports = { getUsers }
+module.exports = { getUsers, getUser }
