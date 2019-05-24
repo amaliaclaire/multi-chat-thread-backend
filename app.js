@@ -18,10 +18,12 @@ app.use(bodyParser.urlencoded({extended: false}))
 const usersRoutes = require('./api/routes/usersRoutes')
 const ticketRoutes = require('./api/routes/ticketsRoutes')
 const commentsRoutes = require('./api/routes/commentsRoutes')
+const votesRoutes = require('./api/routes/votesRoutes')
 
 app.use('/users', usersRoutes)
 app.use('/tickets', ticketRoutes)
 app.use('/comments', commentsRoutes)
+app.use('/votes', votesRoutes)
 
 
 

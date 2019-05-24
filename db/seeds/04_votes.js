@@ -8,27 +8,27 @@ exports.seed = function(knex, Promise) {
         {
           id: 1,
           user_id: 1,
-          type: 1
+          type: "good"
         },
         {
           id: 2,
           user_id: 5,
-          type: 2
+          type: "neutral"
         },
         {
           id: 3,
           user_id: 5,
-          type: 2
+          type: "bad"
         },
         {
           id: 4,
           user_id: 4,
-          type: 3
+          type: "good"
         },
         {
           id: 5,
           user_id: 4,
-          type: 1
+          type: "neutral"
         }
       ]);
     });
