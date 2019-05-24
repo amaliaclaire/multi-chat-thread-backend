@@ -9,26 +9,6 @@ getAll = (body) => {
   .catch(err => console.log(err))
 }
 
-console.log('hitsModels');
 
-addOrRemoveVote = (body) => {
-  return knex('votes')
-  .where(newVote)
-  .first()
-  .then(result => {
-    if (!result) {
-      return knex('votes')
-      .insert(newVote)
-    } else {
-      return knex('votes')
-      .where(newVote)
-      .del()
-    }
-  })
-  .then(() => {
-    return knex('votes')
-    .where({})
-  })
-}
 
-module.exports = { getAll, addOrRemoveVote }
+module.exports = { getAll }

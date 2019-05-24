@@ -6,7 +6,6 @@ getComments = (req, res, next) => {
     .catch(err => console.log(err))
   }
 
-  console.log('controllers were hit');
 
 
   usersTicketComments = (req, res, next) => {

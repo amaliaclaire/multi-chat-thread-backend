@@ -1,6 +1,5 @@
 const knex = require("../../db/knex")
 const uuid = require("uuid/v4")
-console.log('models were hit');
 
 
 getAllComments = (body) => {
