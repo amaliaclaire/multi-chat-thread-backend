@@ -15,6 +15,17 @@ getUser = (req, res, next) => {
 
 }
 
+getComments = (req, res, next) => {
+  const usersAndComments = model.getCommentsNested()
+  .then(usersAndComments => {
+    res.json(usersAndComments)
+  })
+  .catch(err => {
+    next(err)
+  })
+}
+console.log('hi');
 
 
-module.exports = { getUsers, getUser }
+
+module.exports = { getUsers, getUser, getComments }

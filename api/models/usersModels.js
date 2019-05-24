@@ -18,7 +18,13 @@ findByUser = (username) => {
   .catch(console.error)
 }
 
+getCommentsNested = () => {
+
+}
 
 
 
-module.exports = { getAll, findByUser }
+
+
+
+module.exports = { getAll, findByUser, getCommentsNested }

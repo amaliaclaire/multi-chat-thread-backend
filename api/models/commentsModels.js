@@ -29,4 +29,6 @@ create = ({comment, user_id}) => {
 
 
 
+
+
 module.exports = { getAllComments, userTicketsComments, create }
