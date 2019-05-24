@@ -19,12 +19,13 @@ const usersRoutes = require('./api/routes/usersRoutes')
 const ticketRoutes = require('./api/routes/ticketsRoutes')
 const commentsRoutes = require('./api/routes/commentsRoutes')
 const votesRoutes = require('./api/routes/votesRoutes')
-const authRouter = require('./api/routes/authRoutes')
-
-app.use('/users', usersRoutes)
+// const authRouter = require('./api/routes/authRoutes')
+//
+// app.use('/users', usersRoutes)
 app.use('/tickets', ticketRoutes)
 app.use('/comments', commentsRoutes)
 app.use('/votes', votesRoutes)
+app.use('/users', usersRoutes)
 
 
 
