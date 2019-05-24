@@ -15,7 +15,8 @@ getComments = (req, res, next) => {
   }
 
   create = (req, res, next) => {
-    model.create(req.body).then(([comment]) => {
+    model.create(req.body)
+    .then((comment) => {
       res.json(comment)
     })
   }

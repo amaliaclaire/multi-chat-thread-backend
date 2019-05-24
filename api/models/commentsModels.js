@@ -21,8 +21,13 @@ userTicketsComments = (username) => {
 }
 
 
-create = ({comment, user_id}) => {
-  const newComment = {comment, user_id}
+create = ({comment, user_id, ticket_id}) => {
+  const newComment = {
+    id: uuid(),
+    user_id: user_id,
+    ticket_id: ticket_id,
+    comment: comment
+  }
   return knex('comments').insert(newComment).returning('*')
 }
 
