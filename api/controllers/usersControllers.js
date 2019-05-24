@@ -8,10 +8,11 @@ getUsers = (req, res, next) => {
 }
 
 getUser = (req, res, next) => {
-  const id = req.params.id
-  model.getOne(id)
-  .then(user => res.status(200)).json(user)
-  .catch(err => next(err))
+  const name = req.params.user_name
+  model.findByUser(name)
+  .then(user => res.status(200).send(user))
+  .catch(console.error())
+
 }
 
 

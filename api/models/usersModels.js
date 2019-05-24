@@ -9,17 +9,16 @@ getAll = (body) => {
   .catch(err => console.log(err))
 }
 
-getOne = (id) => {
+findByUser = (username) => {
+
   return knex("users")
-  .select("*")
-  .where({id})
+  .where({user_name: username })
   .first()
-  .then(result =>
-    result)
-  .catch(err => console.log(err))
+  .then(match => match)
+  .catch(console.error)
 }
 
 
 
 
-module.exports = { getAll, getOne }
+module.exports = { getAll, findByUser }
