@@ -7,4 +7,13 @@ getUsers = (req, res, next) => {
   .catch(err => console.log(err))
 }
 
-module.exports = { getUsers }
+getUser = (req, res, next) => {
+  const id = req.params.id
+  model.getOne(id)
+  .then(user => res.status(200)).json(user)
+  .catch(err => next(err))
+}
+
+
+
+module.exports = { getUsers, getUser }

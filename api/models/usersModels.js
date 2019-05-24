@@ -7,7 +7,18 @@ getAll = (body) => {
   .where(body)
   .then(result => result)
   .catch(err => console.log(err))
-
 }
 
-module.exports = { getAll }
+getOne = (id) => {
+  return knex("users")
+  .select("*")
+  .where({id})
+  .first()
+  .then(result =>
+    result)
+  .catch(err => console.log(err))
+}
+
+console.log('getone', getOne);
+
+module.exports = { getAll, getOne }

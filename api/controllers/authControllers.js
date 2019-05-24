@@ -8,12 +8,13 @@ getUsers = (req, res, next) => {
 }
 
 getUser = (req, res) => {
+  let userId;
   const id = req.params.id
-  model.populate(id).then()
-  .then(user => res.status(200).send(user))
-  .catch(console.log(err))
+  model.getOne(id)
+  .then(result => {
+    console.log('result:', result);
+  })
 }
 
 
-
-module.exports = { getUsers, getUser }
+module.exports = { getUsers }
