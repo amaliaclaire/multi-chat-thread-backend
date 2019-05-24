@@ -15,11 +15,9 @@ getComments = (req, res, next) => {
   }
 
   create = (req, res, next) => {
-    const result = model.create(req.body)
-
-    if(result.errors) {
-      return next({status: 400, message: `could not create user`, errors: result.errors})
-    }
+    model.create(req.body).then(([comment]) => {
+      res.json(comment)
+    })
   }
 
 
