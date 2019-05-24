@@ -9,17 +9,25 @@ getAll = (body) => {
   .catch(err => console.log(err))
 }
 
-findByUser = (username) => {
-
+findByUser = (id) => {
+  console.log('id', id);
   return knex("users")
-  .where({user_name: username })
+  .where({id})
   .first()
   .then(match => match)
   .catch(console.error)
 }
 
 getCommentsNested = () => {
-
+ return knex("users")
+ .then(users => {
+   const promises = users.map(user => {
+     return knex('comments').where({user_id: user.id})
+     .then(comments => {
+       console.log('comments', comment);
+     })
+   })
+ })
 }
 
 

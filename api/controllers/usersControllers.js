@@ -8,8 +8,9 @@ getUsers = (req, res, next) => {
 }
 
 getUser = (req, res, next) => {
-  const name = req.params.user_name
-  model.findByUser(name)
+  const id = req.params.id
+  console.log('controller', id);
+  model.findByUser(id)
   .then(user => res.status(200).send(user))
   .catch(console.error())
 
@@ -24,7 +25,6 @@ getComments = (req, res, next) => {
     next(err)
   })
 }
-console.log('hi');
 
 
 
