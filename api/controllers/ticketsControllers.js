@@ -1,5 +1,4 @@
 const model = require("../models/ticketsModels")
-console.log('models');
 
 getTickets = (req, res, next) => {
   model.getAllTickets(req.body)
