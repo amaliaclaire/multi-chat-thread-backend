@@ -7,7 +7,10 @@ getVotes = (req, res, next) => {
   .catch(err => console.log(err))
 }
 
+create = (req, res, next) => {
+  model.voteOnUser(req.body)
+  .then(vote => res.json({vote}))
+  .catch(console.log(err))
+}
 
-
-
-module.exports = { getVotes }
+module.exports = { getVotes, create }

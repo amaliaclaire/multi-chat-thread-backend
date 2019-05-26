@@ -22,7 +22,6 @@ userTicketsComments = (username) => {
 
 
 create = (body) => {
-  console.log('req.body', body);
 
   return knex('comments')
   .insert(body)
