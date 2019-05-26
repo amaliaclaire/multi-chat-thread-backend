@@ -1,8 +1,11 @@
 exports.up = function(knex, promise) {
   return knex.schema.createTable('comments', function(table) {
-    table.string('id');
-    table.foreign('user_id').references('id'); 
-    table.string('comment').notNullable();
+    table.increments('id');
+    table.integer('ticket_id').notNullable();
+    table.foreign('ticket_id').references('tickets.id').onDelete('CASCADE');
+    table.integer('user_id').notNullable();
+    table.foreign('user_id').references('users.id').onDelete('CASCADE');
+    table.string('comment').notNullable().defaultTo('')
     table.timestamp('created_at').defaultTo(knex.fn.now());
     table.timestamp('updated_at').defaultTo(knex.fn.now());
   })
@@ -12,5 +15,5 @@ exports.up = function(knex, promise) {
 
 
 exports.down = function(knex, Promise) {
-return knex.schema.dropTable("comments");
+return knex.schema.dropTable('comments');
 };
