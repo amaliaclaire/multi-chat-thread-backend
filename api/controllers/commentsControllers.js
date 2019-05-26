@@ -15,11 +15,9 @@ getComments = (req, res, next) => {
   }
 
   create = (req, res, next) => {
+
     model.create(req.body)
-    .then((comment) => {
-      console.log('comment', comment);
-      res.json(comment)
-    })
+    .then(comment => res.status(200).send({comment}))
   }
 
 

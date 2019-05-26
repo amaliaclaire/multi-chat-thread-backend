@@ -16,9 +16,10 @@ exports.up = function(knex, Promise) {
     table.string('title').notNullable();
     table.string('description').notNullable();
     table.integer('price').notNullable();
-    table.boolean('status').notNullable().defaultTo('true'); 
+    table.boolean('status').notNullable().defaultTo('true');
     table.string('deadline').notNullable().defaultsTo(false);
-    table.integer('user_id').references('id').inTable('users')
+    table.integer('user_id');
+    table.foreign('user_id').references('users.id').onDelete('CASCADE');
   })
 };
 
