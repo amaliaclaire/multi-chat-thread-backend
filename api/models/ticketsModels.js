@@ -10,5 +10,14 @@ getAllTickets = (body) => {
   .catch(err => console.log(err))
 }
 
+getComments = (ticketID) => {
+  console.log('ticket model ');
+  return knex("comments")
+  .where({ticket_id: ticketID})
+  .select("*")
+  .then(result => result)
+  .catch(err => console.log(err))
+}
 
-module.exports = { getAllTickets }
+
+module.exports = { getAllTickets, getComments }

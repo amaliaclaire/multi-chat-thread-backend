@@ -3,6 +3,7 @@ const router = express.Router();
 const ctrl = require('../controllers/ticketsControllers');
 
 router.get('/', ctrl.getTickets)
+router.get('/comments/:ticket_id', ctrl.ticketComments)
 
 
 
